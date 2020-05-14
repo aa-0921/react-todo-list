@@ -4,11 +4,31 @@ import ToDoListItem from "./ToDoListItem.js"
 
 class App extends Component {
 
-  //ToDoListをstateに定義、初期値は []
+  //ToDoListをstateに定義、初期値はlocalStorageから取得。空だったら []
   state = {
-    todoList: []
+    todoList: JSON.parse(localStorage.getItem("todoList")) || []
   }
 
+  // todoList itemの増加
+  addTodo = (item, callBack) => {
+    // todoList stateに追加
+    this.setState(
+      {
+        todoList: this.state.todoList.concat(item)
+      },
+      () => {
+        // localStorageにtodoList stateを保存
+        localStorage.setItem("todoList", JSON.stringify(this.state.todoList))
+        // callBack関数が引数に渡されていた場合に実行
+        callBack && callBack()
+      }
+    )
+  }
+
+  // todoListからitemを削除
+
+
+  
   render() {
     return (
       <div className="App">
