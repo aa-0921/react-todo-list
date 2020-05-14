@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './ToDoListItem.css';
 
 class ToDoListItem extends Component {
-  rener() {
+  render() {
     const {
       title,
       description
