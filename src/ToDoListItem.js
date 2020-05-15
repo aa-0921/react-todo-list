@@ -7,6 +7,7 @@ class ToDoListItem extends Component {
       title,
       description,
       ...props
+      // title,decsriptionの他の残りの要素、という意味。
     } = this.props;
 
     return (
