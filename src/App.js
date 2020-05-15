@@ -4,12 +4,12 @@ import ToDoListItem from "./ToDoListItem.js"
 
 class App extends Component {
 
-  //ToDoListをstateに定義、初期値はlocalStorageから取得。空だったら []
+  // ToDoListをstateに定義、初期値はlocalStorageから取得または []
   state = {
     todoList: JSON.parse(localStorage.getItem("todoList")) || []
   }
 
-  // todoList itemの増加
+  // todoList itemの追加
   addTodo = (item, callBack) => {
     // todoList stateに追加
     this.setState(
@@ -26,16 +26,27 @@ class App extends Component {
   }
 
   // todoListからitemを削除
+  removeTodo = (item, callBack) => {
+    this.setState(
+      {
+        todoList: this.state.todoList.filter(x => x !== item)
+      },
+      () => {
+        // localStorageにtodoList stateを保存
+        localStorage.setItem("todoList", JSON.stringify(this.state.todoList))
+        // callBack関数が引数に渡されていた場合に実行
+        callBack && callBack()
+      }
+    )
+  }
 
-
-  
   render() {
     return (
       <div className="App">
         <form
           className="App-form"
           onSubmit={e => {
-            //formのデフォルトのイベントをキャンセル
+            // formのデフォルトのイベントをキャンセル
             e.preventDefault();
 
             // idがtitleのElementを取得
@@ -43,16 +54,13 @@ class App extends Component {
             // idがdescriptionのElementを取得
             const descriptionElement = e.target.elements["description"];
 
-            // todoList stateに追加
-            this.setState(
+            this.addTodo(
               {
-                todoList: this.state.todoList.concat({
-                  title: titleElement.value,
-                  description: descriptionElement.value
-                })
+                title: titleElement.value,
+                description: descriptionElement.value
               },
-              // stateの変更後に入力した値を空にする
               () => {
+                // stateの変更後に入力した値を空にする
                 titleElement.value = "";
                 descriptionElement.value = "";
               }
@@ -85,11 +93,7 @@ class App extends Component {
               title={todo.title}
               description={todo.description}
               // クリックされたItemをtodoList stateから削除
-              onClick={() => {
-                this.setState({
-                  todoList: this.state.todoList.filter(x => x !== todo)
-                })
-              }}
+              onClick={() => this.removeTodo(todo)}
             />
           ))}
         </div>
