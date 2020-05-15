@@ -100,3 +100,18 @@ textarea#description {
   box-shadow:  6px 6px 12px #e6eef0, 
              -6px -6px 12px #ffffff;
 }
+
+div.ToDoListItem {
+  border: none;
+  outline: none;
+  color: gray;
+background: linear-gradient(145deg, #f0fff9, #cae6d2);
+box-shadow:  36px 36px 72px #d7f5e0, 
+             -36px -36px 72px #e9fff2;
+ 
+}
+ /* border-radius: 7px;
+background: #e0ffe9;
+box-shadow:  21px 21px 64px #d7f5e0, 
+             -21px -21px 64px #e9fff2;
+*/
