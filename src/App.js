@@ -37,8 +37,9 @@ class App extends Component {
       () => {
         // localStorageにtodoList stateを保存、
         // JSON.stringify() メソッドは、ある JavaScript のオブジェクトや値を JSON 文字列に変換します。
+        // つまり、stateのtodoListにJSON形式で、todoListをセット！
         localStorage.setItem("todoList", JSON.stringify(this.state.todoList))
-        // callBack関数が引数に渡されていた場合に実行
+        // callBack関数が引数に渡されていて、存在するなら（true）それを実行
         callBack && callBack()
       }
     )
