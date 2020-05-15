@@ -70,18 +70,17 @@ class App extends Component {
           <div>
             <input
               id="title"
-              placeholder="title"
-            />
+              placeholder="ToDo" />
             <textarea
               id="description"
-              placeholder="description"
+              placeholder="memo"
             />
           </div>
           <div>
             <button
               type="submit"
             >
-              登録
+              ok!
             </button>
           </div>
         </form>
