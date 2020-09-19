@@ -1,10 +1,8 @@
 body {
-	background-color:#cccccc;		/*ページ全体の背景色*/
-	font-size:95%;			/* フォントサイズを95%にする */
-	font-family: "ＭＳ ゴシック",sans-serif;	/* フォントの種類をゴシック系にする */
-  line-height:1.5;		/* 行の高さを1.5倍にする */
-  background: linear-gradient(145deg, #ddffe4, #bad7c0);
-  
+  font-size: 95%; /* フォントサイズを95%にする */
+  font-family: "ＭＳ ゴシック", sans-serif; /* フォントの種類をゴシック系にする */
+  line-height: 1.5; /* 行の高さを1.5倍にする */
+  background: #afc9ca;
 }
 
 .App {
@@ -14,8 +12,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(145deg, #ddffe4, #bad7c0);
-
 }
 
 .App-form {
@@ -23,35 +19,26 @@ body {
   flex-direction: column;
   width: 300px;
   margin: 8px 4px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #aaa;
-  background: linear-gradient(145deg, #ddffe4, #bad7c0);
-
 }
 
 .App-form > :nth-child(1) {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(145deg, #ddffe4, #bad7c0);
-
 }
 
 .App-form > :nth-child(1) > * {
   outline: none;
-  border: 1px solid #aaa;
-  transition: all .3s;
+  transition: all 0.3s;
   border-radius: 2px;
-}
-
-.App-form > :nth-child(1) > *:focus {
-  box-shadow: 0 0 7px #1abc9c;
-  border: 1px solid #1abc9c;
 }
 
 .App-form > :nth-child(1) > :first-child {
   font-size: 18px;
   height: 24px;
   padding: 2px 8px;
+  border-radius: 15px;
+  background: #afc9ca;
+  box-shadow: inset 8px 8px 21px #899d9e, inset -8px -8px 21px #d6f5f6;
 }
 
 .App-form > :nth-child(1) > :last-child {
@@ -59,6 +46,9 @@ body {
   font-size: 16px;
   height: 40px;
   padding: 2px 8px;
+  border-radius: 15px;
+  background: #afc9ca;
+  box-shadow: inset 8px 8px 21px #899d9e, inset -8px -8px 21px #d6f5f6;
 }
 
 .App-form > :nth-child(2) {
@@ -70,48 +60,48 @@ body {
 .App-form button {
   padding: 4px 8px;
   margin-top: 8px;
+
   cursor: pointer;
   border-radius: 26px;
-  background: linear-gradient(145deg, #ddffe4, #bad7c0);
-  box-shadow:  20px 20px 25px #a4bda8, 
-             -20px -20px 25px #faffff;
+  background: #afc9ca;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #bbd7d8, #9eb5b6);
+  box-shadow: 8px 8px 21px #899d9e, -8px -8px 21px #d6f5f6;
 }
 
 button {
   border: none;
   outline: none;
   border-radius: 7px;
-background: #e0ffe9;
-box-shadow:  12px 12px 24px #d3f0db, 
-             -12px -12px 24px #edfff7;
+  background: #e0ffe9;
 }
 input#title {
   border: none;
   outline: none;
-  background: #f5fdff;
-  box-shadow:  6px 6px 12px #e6eef0, 
-             -6px -6px 12px #ffffff;
 }
 
 textarea#description {
   border: none;
   outline: none;
-  background: #f5fdff;
-  box-shadow:  6px 6px 12px #e6eef0, 
-             -6px -6px 12px #ffffff;
 }
 
 div.ToDoListItem {
   border: none;
   outline: none;
   color: gray;
-background: linear-gradient(145deg, #f0fff9, #cae6d2);
-box-shadow:  36px 36px 72px #d7f5e0, 
-             -36px -36px 72px #e9fff2;
- 
 }
- /* border-radius: 7px;
-background: #e0ffe9;
-box-shadow:  21px 21px 64px #d7f5e0, 
-             -21px -21px 64px #e9fff2;
-*/
+
+.form-wrap {
+  margin-bottom: 20px;
+
+  border-radius: 47px;
+  background: #afc9ca;
+  box-shadow: 14px 14px 48px #8ca1a2, -14px -14px 48px #d2f1f2;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  display: flex; /* 子要素をflexboxで揃える */
+  flex-direction: column; /* 子要素をflexboxにより縦方向に揃える */
+  justify-content: center; /* 子要素をflexboxにより中央に配置する */
+  align-items: center; /* 子要素をflexboxにより中央に配置する */
+}
